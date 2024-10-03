@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo com Modal</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style/help.css">
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="sparkles-outline"></ion-icon>
+                        </span>
+                        <span class="title">GRUPO PROSAFETY</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="viewMerchants.html">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Comerciantes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chat.html">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Mensagens</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="help.html">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Ajuda</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="configuracao.html">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Configurações</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Rsenha.html">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Redefinir Senha</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/imgs/customer01.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- ======================= Cards ================== -->
+        
+            <style>
+                * {
+                    box-sizing: border-box;
+                    margin: 0;
+                    padding: 0;
+                }
+        
+                body {
+                    font-family: 'Arial', sans-serif;
+                    background: #f4f4f4;
+                    color: #333;
+                    line-height: 1.6;
+                }
+        
+                header {
+                    background: #007BFF;
+                    color: white;
+                    padding: 20px 0;
+                    text-align: center;
+                    position: sticky;
+                    top: 0;
+                    z-index: 1000;
+                }
+        
+                nav ul {
+                    list-style: none;
+                    padding: 0;
+                }
+        
+                nav ul li {
+                    display: inline;
+                    margin: 0 15px;
+                }
+        
+                nav ul li a {
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                    transition: color 0.3s;
+                }
+        
+                nav ul li a:hover {
+                    color: #FFD700; /* Gold color on hover */
+                }
+        
+                main {
+                    padding: 20px;
+                    max-width: 800px;
+                    margin: auto;
+                }
+        
+                h1, h2 {
+                    margin: 0 0 20px;
+                }
+        
+                h2 {
+                    color: #007BFF;
+                }
+        
+                .video-card {
+                    background: white;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    padding: 10px;
+                    margin: 10px 0;
+                    width: 300px; /* Largura fixa para os cards */
+                    transition: box-shadow 0.3s, transform 0.3s;
+                    cursor: pointer;
+                    display: inline-block; /* Para que fiquem lado a lado */
+                }
+        
+                .thumbnail {
+                    width: 100%; /* Mantém a thumbnail responsiva ao card */
+                    border-radius: 8px;
+                    margin-bottom: 5px;
+                }
+        
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1000;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    padding-top: 100px; /* Espaçamento superior */
+                }
+        
+                .modal-content {
+                    background-color: #fefefe;
+                    margin: auto; /* Centraliza horizontalmente */
+                    padding: 20px;
+                    border: 1px solid #888;
+                    width: 80%; /* Largura da modal */
+                    max-width: 600px; /* Limite máximo para telas grandes */
+                    border-radius: 10px; /* Bordas arredondadas */
+                    position: relative;
+                    top: 50%; /* Centraliza verticalmente */
+                    transform: translateY(-50%); /* Ajusta a posição vertical */
+                }
+        
+                .modal iframe {
+                    width: 100%;
+                    height: 315px; /* Altura do vídeo */
+                    border: none;
+                    border-radius: 8px; /* Bordas arredondadas do vídeo */
+                }
+        
+                .close {
+                    color: #aaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+        
+                .close:hover,
+                .close:focus {
+                    color: black;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+        
+                footer {
+                    text-align: center;
+                    padding: 20px;
+                    background: #333;
+                    color: white;
+                    position: relative;
+                    bottom: 0;
+                    width: 100%;
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <h1>Tutoriais em Vídeo</h1>
+                <nav>
+                    <ul>
+                        <li><a href="faq.html">Perguntas Frequentes</a></li>
+                        <li><a href="videos.html">Tutoriais em Vídeo</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </header>
+        
+            <main>
+                <h2>Vídeos Disponíveis</h2>
+                <div class="video-card" onclick="openModal('https://www.youtube.com/embed/eV4UcOAIP-4')">
+                    <img src="https://img.youtube.com/vi/gOAabd-_rxw/0.jpg" alt="Thumbnail do vídeo" class="thumbnail">
+                    <h3>Como criar uma conta</h3>
+                    <p>Aprenda a criar sua conta em poucos passos.</p>
+                </div>
+                <div class="video-card" onclick="openModal('https://player.vimeo.com/video/573660570')">
+                    <img src="https://img.youtube.com/vi/gOAabd-_rxw/0.jpg" alt="Thumbnail do vídeo" class="thumbnail">
+                    <h3>Como fazer um pedido</h3>
+                    <p>Veja como realizar um pedido no nosso site.</p>
+                </div>
+            </main>
+        
+            <div id="videoModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <iframe id="modalVideo" src="" allowfullscreen></iframe>
+                </div>
+            </div>
+        
+            <footer>
+                <p>&copy; 2024 Central de Ajuda. Todos os direitos reservados.</p>
+            </footer>
+        
+            <script>
+                function openModal(videoUrl) {
+                    document.getElementById("modalVideo").src = videoUrl;
+                    document.getElementById("videoModal").style.display = "block";
+                }
+        
+                function closeModal() {
+                    document.getElementById("modalVideo").src = ""; // Limpa a URL do vídeo
+                    document.getElementById("videoModal").style.display = "none"; // Oculta o modal
+                }
+        
+                // Fecha o modal se o usuário clicar fora dele
+                window.onclick = function(event) {
+                    const modal = document.getElementById("videoModal");
+                    if (event.target === modal) {
+                        closeModal();
+                    }
+                }
+            </script>
+        </body>
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incluir Produto</title>
+    <style>
+        /* Estilo básico para a modal */
+        .modal {
+            display: none; /* Oculta a modal por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 50px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #includeButton {
+            display: none; /* Oculta o botão até a validação */
+        }
+    </style>
+</head>
+<script>
+    document.getElementById('openModalBtn').onclick = function() {
+        var modalUrl = 'incluir.html'; // Atualizado para incluir.html
+        fetch(modalUrl)
+            .then(response => response.text())
+            .then(data => {
+                var modalContainer = document.getElementById('modalContainer');
+                modalContainer.innerHTML = data;
+
+                // Abrir a modal
+                var modal = document.getElementById('inclusionModal'); // Atualizado para inclusãoModal
+                modal.style.display = 'block';
+
+                // Fechar a modal ao clicar no botão de fechar
+                var span = modal.getElementsByClassName('close')[0];
+                span.onclick = function() {
+                    modal.style.display = 'none';
+                }
+
+                // Fechar a modal ao clicar fora da modal
+                window.onclick = function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+
+                // As funções validateToken e includeProduct são definidas no próprio arquivo incluir.html
+                // Se você precisar chamar essas funções aqui, você deve garantir que estão no escopo global
+            })
+            .catch(error => console.error('Erro ao carregar a modal:', error));
+    };
+
+    
+    const navigation = document.querySelector('.navigation');
+    const toggle = document.querySelector('.toggle');
+
+    navigation.addEventListener('mouseenter', () => {
+        navigation.classList.add('active');
+        toggle.style.left = '300px'; // Move o botão para a posição correta
+    });
+
+    navigation.addEventListener('mouseleave', () => {
+        navigation.classList.remove('active');
+        toggle.style.left = '0'; // Retorna o botão para a posição inicial
+    });
+
+</script>
+</body>
+
+</html>

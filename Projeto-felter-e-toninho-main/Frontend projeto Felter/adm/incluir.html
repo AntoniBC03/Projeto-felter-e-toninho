@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incluir Produto</title>
+    <style>
+        /* Estilo básico para a modal */
+        .modal {
+            display: none; /* Oculta a modal por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 50px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #includeButton {
+            display: none; /* Oculta o botão até a validação */
+        }
+    </style>
+</head>
+<body>
+    <!-- A modal -->
+    <div id="inclusionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Incluir Produto</h2>
+            <form id="productForm">
+                <label for="productName">Nome do Produto:</label>
+                <input type="text" id="productName" name="productName" required>
+
+                <label for="minQuantity">Quantidade Mínima:</label>
+                <input type="number" id="minQuantity" name="minQuantity" required>
+
+                <label for="avgQuantity">Quantidade Média:</label>
+                <input type="number" id="avgQuantity" name="avgQuantity" required>
+
+                <label for="maxQuantity">Quantidade Máxima:</label>
+                <input type="number" id="maxQuantity" name="maxQuantity" required>
+
+                <label for="token">Token:</label>
+                <input type="text" id="token" name="token" required>
+
+                <button type="button" onclick="validateToken()">Validar Token</button>
+                <button type="button" id="includeButton" onclick="includeProduct()">Incluir</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Função para validar o token
+        function validateToken() {
+            var token = document.getElementById('token').value;
+            var validToken = '1234567890'; // Token de exemplo
+
+            var includeButton = document.getElementById('includeButton');
+
+            if (token === validToken) {
+                includeButton.style.display = 'inline-block';
+                alert('Token válido. O botão "Incluir" está agora disponível.');
+            } else {
+                includeButton.style.display = 'none';
+                alert('Token inválido. Tente novamente.');
+            }
+        }
+
+        // Função para incluir o produto
+        function includeProduct() {
+            alert('Produto incluído com sucesso!');
+            document.getElementById('inclusionModal').style.display = 'none';
+        }
+
+        // Fechar a modal ao clicar no botão de fechar
+        document.querySelector('#inclusionModal .close').onclick = function() {
+            document.getElementById('inclusionModal').style.display = 'none';
+        }
+
+        // Fechar a modal ao clicar fora da modal
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('inclusionModal')) {
+                document.getElementById('inclusionModal').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

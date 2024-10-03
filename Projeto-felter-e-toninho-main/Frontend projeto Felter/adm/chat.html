@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo com Modal</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="scripts/modal.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="../style/chat.css">
+    
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="sparkles-outline"></ion-icon>
+                        </span>
+                        <span class="title">GRUPO PROSAFETY</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="viewMerchants.html">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Comerciantes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chat.html">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Mensagens</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="help.html">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Ajuda</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="configuracao.html">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Configurações</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Rsenha.html">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Redefinir Senha</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/imgs/customer01.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- ======================= tela ================== -->
+            <body>
+                <div class="container">
+                    <div class="sidebar">
+                        <h2>Comerciantes</h2>
+                        <div class="merchant" onclick="openChat('João', 'Loja do João')">
+                            <img src="joao.jpg" alt="João" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>João Silva</h3>
+                                <p>Loja do João</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Maria', 'Artesanato da Maria')">
+                            <img src="maria.jpg" alt="Maria" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Maria Oliveira</h3>
+                                <p>Artesanato da Maria</p>
+                            </div>
+                        </div>
+                        <!-- Adicione mais comerciantes até 25 -->
+                        <div class="merchant" onclick="openChat('Carlos', 'Roupas do Carlos')">
+                            <img src="carlos.jpg" alt="Carlos" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Carlos Pereira</h3>
+                                <p>Roupas do Carlos</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Ana', 'Bolos da Ana')">
+                            <img src="ana.jpg" alt="Ana" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Ana Costa</h3>
+                                <p>Bolos da Ana</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Ricardo', 'Pizzas do Ricardo')">
+                            <img src="ricardo.jpg" alt="Ricardo" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Ricardo Lima</h3>
+                                <p>Pizzas do Ricardo</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Luiza', 'Doces da Luiza')">
+                            <img src="luiza.jpg" alt="Luiza" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Luiza Martins</h3>
+                                <p>Doces da Luiza</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Pedro', 'Salgados do Pedro')">
+                            <img src="pedro.jpg" alt="Pedro" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Pedro Alves</h3>
+                                <p>Salgados do Pedro</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Clara', 'Presentes da Clara')">
+                            <img src="clara.jpg" alt="Clara" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Clara Ferreira</h3>
+                                <p>Presentes da Clara</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Fernando', 'Móveis do Fernando')">
+                            <img src="fernando.jpg" alt="Fernando" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Fernando Santos</h3>
+                                <p>Móveis do Fernando</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Sofia', 'Bijuterias da Sofia')">
+                            <img src="sofia.jpg" alt="Sofia" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Sofia Ramos</h3>
+                                <p>Bijuterias da Sofia</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Gustavo', 'Ferragens do Gustavo')">
+                            <img src="gustavo.jpg" alt="Gustavo" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Gustavo Oliveira</h3>
+                                <p>Ferragens do Gustavo</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Tânia', 'Moda da Tânia')">
+                            <img src="tania.jpg" alt="Tânia" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Tânia Silva</h3>
+                                <p>Moda da Tânia</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Ricardo', 'Cervejas do Ricardo')">
+                            <img src="ricardo.jpg" alt="Ricardo" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Ricardo Costa</h3>
+                                <p>Cervejas do Ricardo</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Elena', 'Roupas da Elena')">
+                            <img src="elena.jpg" alt="Elena" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Elena Martins</h3>
+                                <p>Roupas da Elena</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Danilo', 'Artigos do Danilo')">
+                            <img src="danilo.jpg" alt="Danilo" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Danilo Santos</h3>
+                                <p>Artigos do Danilo</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Fabiana', 'Pães da Fabiana')">
+                            <img src="fabiana.jpg" alt="Fabiana" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Fabiana Lima</h3>
+                                <p>Pães da Fabiana</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Roberto', 'Frutas do Roberto')">
+                            <img src="roberto.jpg" alt="Roberto" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Roberto Ferreira</h3>
+                                <p>Frutas do Roberto</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Tatiane', 'Cosméticos da Tatiane')">
+                            <img src="tatiane.jpg" alt="Tatiane" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Tatiane Ramos</h3>
+                                <p>Cosméticos da Tatiane</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Jorge', 'Flores do Jorge')">
+                            <img src="jorge.jpg" alt="Jorge" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Jorge Lima</h3>
+                                <p>Flores do Jorge</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Nina', 'Sapatos da Nina')">
+                            <img src="nina.jpg" alt="Nina" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Nina Costa</h3>
+                                <p>Sapatos da Nina</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Victor', 'Eletrônicos do Victor')">
+                            <img src="victor.jpg" alt="Victor" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Victor Santos</h3>
+                                <p>Eletrônicos do Victor</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Cecília', 'Acessórios da Cecília')">
+                            <img src="cecilia.jpg" alt="Cecília" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Cecília Ferreira</h3>
+                                <p>Acessórios da Cecília</p>
+                            </div>
+                        </div>
+                        <div class="merchant" onclick="openChat('Felipe', 'Suplementos do Felipe')">
+                            <img src="felipe.jpg" alt="Felipe" class="merchant-photo">
+                            <div class="merchant-info">
+                                <h3>Felipe Almeida</h3>
+                                <p>Suplementos do Felipe</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="chat-window">
+                        <div class="chat-content" id="chatContent"></div>
+                        <div class="message-display" id="messageDisplay">
+                            <!-- As mensagens serão exibidas aqui -->
+                            <div class="chat-input-container">
+                                <textarea id="chatInput" placeholder="Digite sua mensagem..." onkeydown="checkEnter(event)"></textarea>
+                                <button class="audio-button" onclick="sendAudio()">
+                                    <i class="fas fa-microphone"></i> <!-- Ícone de microfone -->
+                                </button>
+                                <button class="send-button" onclick="sendMessage()">
+                                    <i class="fas fa-paper-plane"></i> <!-- Ícone de enviar -->
+                                </button>
+                            </div>
+                            
+            
+                <script>
+                    function openChat(name, store) {
+                        const chatHeader = document.getElementById('chatHeader');
+                        const chatContent = document.getElementById('chatContent');
+            
+                        chatHeader.textContent = `Chat com ${name} - ${store}`;
+                        chatContent.innerHTML = ''; // Limpar mensagens anteriores
+                        chatContent.scrollTop = chatContent.scrollHeight; // Rolagem para baixo
+                    }
+            
+                    function sendMessage() {
+                        const chatInput = document.getElementById('chatInput');
+                        const chatContent = document.getElementById('chatContent');
+            
+                        if (chatInput.value.trim() === '') return;
+            
+                        const message = document.createElement('div');
+                        message.textContent = chatInput.value;
+                        message.classList.add('message');
+                        chatContent.appendChild(message);
+            
+                        chatInput.value = ''; // Limpar input
+                        chatContent.scrollTop = chatContent.scrollHeight; // Rolagem para baixo
+                    }
+            
+                    function checkEnter(event) {
+                        if (event.key === 'Enter') {
+                            event.preventDefault();
+                            sendMessage();
+                        }
+                    }
+            
+                    function sendFile() {
+                        const fileInput = document.getElementById('fileInput');
+                        const chatContent = document.getElementById('chatContent');
+                        const file = fileInput.files[0];
+            
+                        if (file) {
+                            const message = document.createElement('div');
+                            const reader = new FileReader();
+            
+                            reader.onload = function(e) {
+                                if (file.type.startsWith('image/')) {
+                                    message.innerHTML = `<img src="${e.target.result}" class="sent-file" alt="Imagem enviada">`;
+                                } else if (file.type.startsWith('audio/')) {
+                                    message.innerHTML = `<audio controls><source src="${e.target.result}" type="${file.type}">Seu navegador não suporta o elemento de áudio.</audio>`;
+                                }
+                                message.classList.add('file-message');
+                                chatContent.appendChild(message);
+                                chatContent.scrollTop = chatContent.scrollHeight; // Rolagem para baixo
+                            };
+            
+                            reader.readAsDataURL(file);
+                            fileInput.value = ''; // Limpar input
+                        }
+                    }
+                </script>
+            </body>
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incluir Produto</title>
+    <style>
+        /* Estilo básico para a modal */
+        .modal {
+            display: none; /* Oculta a modal por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 50px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #includeButton {
+            display: none; /* Oculta o botão até a validação */
+        }
+    </style>
+</head>
+<script>
+    document.getElementById('openModalBtn').onclick = function() {
+        var modalUrl = 'incluir.html'; // Atualizado para incluir.html
+        fetch(modalUrl)
+            .then(response => response.text())
+            .then(data => {
+                var modalContainer = document.getElementById('modalContainer');
+                modalContainer.innerHTML = data;
+
+                // Abrir a modal
+                var modal = document.getElementById('inclusionModal'); // Atualizado para inclusãoModal
+                modal.style.display = 'block';
+
+                // Fechar a modal ao clicar no botão de fechar
+                var span = modal.getElementsByClassName('close')[0];
+                span.onclick = function() {
+                    modal.style.display = 'none';
+                }
+
+                // Fechar a modal ao clicar fora da modal
+                window.onclick = function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+
+                // As funções validateToken e includeProduct são definidas no próprio arquivo incluir.html
+                // Se você precisar chamar essas funções aqui, você deve garantir que estão no escopo global
+            })
+            .catch(error => console.error('Erro ao carregar a modal:', error));
+    };
+
+    
+    const navigation = document.querySelector('.navigation');
+    const toggle = document.querySelector('.toggle');
+
+    navigation.addEventListener('mouseenter', () => {
+        navigation.classList.add('active');
+        toggle.style.left = '300px'; // Move o botão para a posição correta
+    });
+
+    navigation.addEventListener('mouseleave', () => {
+        navigation.classList.remove('active');
+        toggle.style.left = '0'; // Retorna o botão para a posição inicial
+    });
+    function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const messageContent = input.value.trim();
+    if (messageContent) {
+        const chatContent = document.getElementById('chatContent');
+        
+        // Cria um novo elemento de mensagem
+        const messageElement = document.createElement('div');
+        messageElement.className = 'message';
+        messageElement.textContent = messageContent;
+        
+        // Adiciona a mensagem ao chat
+        chatContent.appendChild(messageElement);
+        input.value = ''; // Limpa o campo de entrada
+        chatContent.scrollTop = chatContent.scrollHeight; // Rola para baixo
+    }
+}
+
+function checkEnter(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+}
+function checkEnter(event) {
+    if (event.key === 'Enter') {
+        if (event.shiftKey) {
+            // Permite a nova linha
+            return; // Não faz nada, permite que o Enter funcione normalmente
+        } else {
+            event.preventDefault(); // Impede o comportamento padrão (nova linha)
+            sendMessage(); // Chama a função de envio
+        }
+    }
+}
+
+
+
+</script>
+</body>
+
+</html>

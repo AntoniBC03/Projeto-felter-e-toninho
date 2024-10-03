@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease; /* Transição suave para o modo escuro */
+}
+
+header {
+    background-color: #1258d8;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.menu {
+    margin-right: 20px;
+}
+
+.menu-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-btn {
+    display: block;
+    width: 30px;
+    height: 20px;
+    position: relative;
+}
+
+.menu-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.menu-btn span:nth-child(2) {
+    top
+    : 7px;
+}
+
+.menu-btn span:nth-child(3) {
+    top: 14px;
+}
+
+.menu-items {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    top: 70px;
+    right: 0;
+    z-index: 1;
+}
+
+.menu-toggle input:checked ~ .menu-items {
+    display: block;
+}
+
+.menu-items ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items ul li {
+    margin-bottom: 10px;
+}
+
+.menu-items ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.course {
+    width: calc(33.33% - 40px); /* Ajuste de tamanho */
+    height: 300px; /* Ajuste de altura */
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.course img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.course h3 {
+    margin: 10px;
+    font-size: 18px;
+}
+
+.description {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    transition: bottom 0.3s ease;
+}
+
+.course:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course:hover .description {
+    bottom: 0;
+}
+
+/* Botão de modo escuro */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "☀️"; /* Sol como ícone padrão */
+    height: 34px;
+    width: 34px;
+    text-align: center;
+    line-height: 34px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #007bff;
+}
+

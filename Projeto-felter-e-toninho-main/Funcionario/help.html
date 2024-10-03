@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo com Modal</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="scripts/modal.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../style/help.css">
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="sparkles-outline"></ion-icon>
+                        </span>
+                        <span class="title">GRUPO PROSAFETY</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="viewMerchants.html">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Comerciantes</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="chat.html">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Mensagens</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="help.html">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Ajuda</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="configuracao.html">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Configurações</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="Rsenha.html">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Redefinir Senha</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/imgs/customer01.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- ======================= Cards ================== -->
+            <style>
+                body {
+                    font-family: 'Arial', sans-serif;
+                    background-color: #f0f4f8;
+                    color: #333;
+                    margin: 0;
+                    padding: 0;
+                }
+                header {
+                    background-color: #4a90e2;
+                    color: white;
+                    padding: 20px;
+                    text-align: center;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                }
+                nav ul {
+                    list-style: none;
+                    padding: 0;
+                }
+                nav ul li {
+                    display: inline;
+                    margin: 0 15px;
+                }
+                nav a {
+                    color: white;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+                nav a:hover {
+                    text-decoration: underline;
+                }
+                main {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: calc(100vh - 140px); /* Ajusta para o cabeçalho e rodapé */
+                    padding: 20px;
+                    background-color: white;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                }
+                h2 {
+                    color: #4a90e2;
+                }
+                .carousel {
+                    position: relative;
+                    width: 100%; /* Ocupa toda a largura disponível */
+                    height: 80%; /* Altura do carrossel */
+                    overflow: hidden;
+                    border-radius: 10px;
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+                }
+                .carousel-images {
+                    display: flex;
+                    transition: transform 0.5s ease;
+                    height: 100%; /* Altura total do carrossel */
+                }
+                .carousel-images img {
+                    width: 100%; /* A imagem ocupará 100% da largura do carrossel */
+                    height: auto; /* A altura será ajustada automaticamente */
+                    display: block;
+                }
+                footer {
+                    text-align: center;
+                    padding: 15px;
+                    background-color: #4a90e2;
+                    color: white;
+                    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <h1>Central de Ajuda</h1>
+                <nav>
+                    <ul>
+                        <li><a href="faq.html">Perguntas Frequentes</a></li>
+                        <li><a href="videos.html">Tutoriais em Vídeo</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <main>
+                <h2>Bem-vindo à nossa Central de Ajuda!</h2>
+                <p>Escolha uma das opções acima para começar.</p>
+                
+                <div class="carousel">
+                    <div class="carousel-images" id="carouselImages">
+                        <img src="../propaganda/apple.png" alt="Imagem 1">
+                        <img src="../propaganda/microsoft.png" alt="Imagem 2">
+                        <img src="../propaganda/windows.jpeg" alt="Imagem 3">
+                    </div>
+                </div>
+            </main>
+        
+            <footer>
+                <p>&copy; 2024 Central de Ajuda. Todos os direitos reservados.</p>
+            </footer>
+        
+            <script>
+                let currentIndex = 0;
+                const images = document.querySelectorAll('#carouselImages img');
+                const totalImages = images.length;
+        
+                function showNextImage() {
+                    currentIndex = (currentIndex + 1) % totalImages;
+                    const offset = -currentIndex * 100; // Muda para a próxima imagem
+                    document.getElementById('carouselImages').style.transform = `translateX(${offset}%)`;
+                }
+        
+                setInterval(showNextImage, 3000); // Muda a imagem a cada 3 segundos
+            </script>
+        </body>
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incluir Produto</title>
+    <style>
+        /* Estilo básico para a modal */
+        .modal {
+            display: none; /* Oculta a modal por padrão */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 50px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #includeButton {
+            display: none; /* Oculta o botão até a validação */
+        }
+    </style>
+</head>
+<script>
+    document.getElementById('openModalBtn').onclick = function() {
+        var modalUrl = 'incluir.html'; // Atualizado para incluir.html
+        fetch(modalUrl)
+            .then(response => response.text())
+            .then(data => {
+                var modalContainer = document.getElementById('modalContainer');
+                modalContainer.innerHTML = data;
+
+                // Abrir a modal
+                var modal = document.getElementById('inclusionModal'); // Atualizado para inclusãoModal
+                modal.style.display = 'block';
+
+                // Fechar a modal ao clicar no botão de fechar
+                var span = modal.getElementsByClassName('close')[0];
+                span.onclick = function() {
+                    modal.style.display = 'none';
+                }
+
+                // Fechar a modal ao clicar fora da modal
+                window.onclick = function(event) {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                }
+
+                // As funções validateToken e includeProduct são definidas no próprio arquivo incluir.html
+                // Se você precisar chamar essas funções aqui, você deve garantir que estão no escopo global
+            })
+            .catch(error => console.error('Erro ao carregar a modal:', error));
+    };
+
+    
+    const navigation = document.querySelector('.navigation');
+    const toggle = document.querySelector('.toggle');
+
+    navigation.addEventListener('mouseenter', () => {
+        navigation.classList.add('active');
+        toggle.style.left = '300px'; // Move o botão para a posição correta
+    });
+
+    navigation.addEventListener('mouseleave', () => {
+        navigation.classList.remove('active');
+        toggle.style.left = '0'; // Retorna o botão para a posição inicial
+    });
+
+</script>
+</body>
+
+</html>
